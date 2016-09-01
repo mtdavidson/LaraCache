@@ -1,8 +1,8 @@
 <?php
 
-use LaraCache\ShowCommand;
 use Predis\ClientInterface;
 use Illuminate\Cache\CacheManager;
+use LaraCache\Commands\ShowCommand;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Foundation\Application;
 use Symfony\Component\Console\Input\ArrayInput;

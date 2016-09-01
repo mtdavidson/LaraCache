@@ -1,5 +1,5 @@
 {
-    "name": "jordanbardsley7/laravel-cache",
+    "name": "jordanbardsley7/laracache",
     "description": "Laravel caching artisan commands.",
     "type": "library",
     "license": "MIT",

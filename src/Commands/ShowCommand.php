@@ -1,6 +1,6 @@
 <?php
 
-namespace LaraCache;
+namespace LaraCache\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Cache\CacheManager;
