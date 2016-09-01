@@ -3,7 +3,7 @@
 namespace LaraCache;
 
 use LaraCache\Commands\ShowCommand;
-use Illuminate\Support\ServiceProvider
+use Illuminate\Support\ServiceProvider;
 
 class LaraCacheServiceProvider extends ServiceProvider
 {
