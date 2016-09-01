@@ -1,0 +1,23 @@
+{
+    "name": "jordanbardsley7/laravel-cache",
+    "description": "Laravel caching artisan commands.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jordan Bardsley",
+            "email": "jordanbardsley7@yahoo.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "laravel/framework": "^5.3",
+        "predis/predis": "^1.1",
+        "mockery/mockery": "^0.9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaraCache\\": "src/"
+        }
+    }
+}

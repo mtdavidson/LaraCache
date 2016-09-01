@@ -1,10 +1,10 @@
 <?php
 
+use LaraCache\ShowCommand;
 use Predis\ClientInterface;
 use Illuminate\Cache\CacheManager;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Foundation\Application;
-use Illuminate\Cache\Console\ShowCommand;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\NullOutput;
 
