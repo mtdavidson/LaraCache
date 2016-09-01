@@ -18,4 +18,6 @@ configuration file.
 The following command can be used to display the total cache for a given store. You currently can only pass "memcached"
 or "redis" but I will work on adding all the other cache drivers.
 
-```php artisan cache:show memcached```
+```
+php artisan cache:show memcached
+```
