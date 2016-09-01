@@ -5,7 +5,7 @@ namespace LaraCache;
 use LaraCache\Commands\ShowCommand;
 use Illuminate\Support\ServiceProvider;
 
-class LaraCacheServiceProvider extends ServiceProvider
+class CacheServiceProvider extends ServiceProvider
 {
     /**
      * Register the commands.
