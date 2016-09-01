@@ -15,7 +15,7 @@ class LaraCacheServiceProvider extends ServiceProvider
     public function commands()
     {
         return [
-            return ShowCommand::class,
+            ShowCommand::class,
         ];
     }
 }
