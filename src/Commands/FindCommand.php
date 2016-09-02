@@ -88,7 +88,7 @@ class FindCommand extends Command
                 $this->argument('query'),
                 $key,
                 $value,
-                $this->manager->getDefaultDriver()
+                $this->manager->getDefaultDriver(),
             ]);
         }
 
