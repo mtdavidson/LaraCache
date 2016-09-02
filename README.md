@@ -29,3 +29,7 @@ and the query will be matched against all cache keys.
 ```
 php artisan cache:find name
 ```
+
+### Examples
+![LaravelCache Memcached](/screenshots/memcached.png?raw=true)
+![LaravelCache Redis](/screenshots/redis.png?raw=true)
