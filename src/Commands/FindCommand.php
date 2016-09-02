@@ -73,6 +73,11 @@ class FindCommand extends Command
         ];
     }
 
+    /**
+     * Default cache factory.
+     *
+     * @return mixed
+     */
     private function getFromDefaultCache()
     {
         switch ($this->manager->getDefaultDriver()) {
@@ -83,6 +88,11 @@ class FindCommand extends Command
         }
     }
 
+    /**
+     * Retrieve from a redis only store.
+     *
+     * @return mixed
+     */
     private function fromRedis()
     {
         $store = $this->manager->store();
@@ -98,15 +108,17 @@ class FindCommand extends Command
         $array = [];
 
         foreach ($results as $result) {
-            $array[] = [
-                $result,
-                $store->connection()->executeRaw(['GET', $result]),
-            ];
+            $array[$result] = $store->connection()->executeRaw(['GET', $result]);
         }
 
         return $array;
     }
 
+    /**
+     * Retrieve from a store with no custom methods.
+     *
+     * @return mixed
+     */
     private function fromDefault()
     {
         $results = $this->manager->store()->get(
