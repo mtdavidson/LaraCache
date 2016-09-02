@@ -88,10 +88,23 @@ class FindCommand extends Command
         $store = $this->manager->store();
 
         $results = $store->connection()->executeRaw([
-            'GET', $this->argument('query')
+            'KEYS', $this->argument('query')
         ]);
 
-        return $results;
+        if (is_null($results)) {
+            return null;
+        }
+
+        $array = [];
+
+        foreach ($results as $result) {
+            $array[] = [
+                $this->argument('query'),
+                $result,
+            ];
+        }
+
+        return $array;
     }
 
     private function fromDefault()
