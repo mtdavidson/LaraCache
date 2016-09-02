@@ -54,7 +54,7 @@ class FindCommand extends Command
         // in the default cache driver.
         $results = $this->manager->store()->get($query);
 
-        if (is_null($result)) {
+        if (is_null($results)) {
             return $this->info('No results for that query.');
         }
 

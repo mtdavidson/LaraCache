@@ -21,3 +21,11 @@ or "redis" but I will work on adding all the other cache drivers.
 ```
 php artisan cache:show memcached
 ```
+
+### Querying A Cache
+Sometimes you may want to query your default caching instance. Todo so, all you need todo is run the below command
+and the query will be matched against all cache keys.
+
+```
+php artisan cache:find name
+```
