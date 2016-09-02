@@ -119,10 +119,6 @@ class ShowCommand extends Command
         // Iterate over all the returned keys
         // and push them into an array.
         foreach ($keys as $key) {
-            if (strpos($key, 'laravel') === false) {
-                continue;
-            }
-
             // Remove the prefix from the key name
             // before looking the key up in the store.
             $key = str_replace($this->store->getPrefix(), '', $key);

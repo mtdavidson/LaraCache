@@ -83,8 +83,8 @@ class FindCommand extends Command
         switch ($this->manager->getDefaultDriver()) {
             case 'redis':
                 return $this->fromRedis();
-            default:
-                return $this->fromDefault();
+            case 'memcached':
+                return $this->fromMemcached();
         }
     }
 
@@ -115,17 +115,27 @@ class FindCommand extends Command
     }
 
     /**
-     * Retrieve from a store with no custom methods.
+     * Retrieve from memcached.
      *
      * @return mixed
      */
-    private function fromDefault()
+    private function fromMemcached()
     {
-        $results = $this->manager->store()->get(
+        $store = $this->manager->store();
+
+        $results = $store->getMemcached()->get(
             $this->argument('query')
         );
 
-        return $results;
+        if (is_null($results)) {
+            return $result;
+        }
+
+        $array = [];
+
+        $array[$this->argument('query')] = $result;
+
+        return $array;
     }
 
     /**
