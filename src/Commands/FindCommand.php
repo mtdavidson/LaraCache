@@ -12,12 +12,12 @@ class FindCommand extends Command
      * @var string
      */
     protected $name = 'cache:find';
-    
+
     /**
      * @var string
      */
     protected $description = 'Query your current cached data.';
-    
+
     /**
      * @var \Illuminate\Cache\CacheManager
      */
