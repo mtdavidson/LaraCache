@@ -99,8 +99,8 @@ class FindCommand extends Command
 
         foreach ($results as $result) {
             $array[] = [
-                $this->argument('query'),
                 $result,
+                $store->connection()->executeRaw(['GET', $result]),
             ];
         }
 
