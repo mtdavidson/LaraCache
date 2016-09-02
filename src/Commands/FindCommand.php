@@ -98,11 +98,11 @@ class FindCommand extends Command
         $store = $this->manager->store();
 
         $results = $store->connection()->executeRaw([
-            'KEYS', $this->argument('query')
+            'KEYS', '*'.$this->argument('query').'*'
         ]);
 
         if (is_null($results)) {
-            return null;
+            return $results;
         }
 
         $array = [];
