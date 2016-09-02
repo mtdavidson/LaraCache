@@ -52,7 +52,7 @@ class FindCommand extends Command
 
         // Lookup the query passed to the command
         // in the default cache driver.
-        $results = $this->manager->store()->get($query);
+        $results = $this->getFromDefaultCache();
 
         if (is_null($results)) {
             return $this->info('No results for that query.');
@@ -71,6 +71,36 @@ class FindCommand extends Command
         return [
             ['query', InputArgument::REQUIRED, 'The key you are looking for.'],
         ];
+    }
+
+    private function getFromDefaultCache()
+    {
+        switch ($this->manager->getDefaultDriver()) {
+            case 'redis':
+                return $this->fromRedis();
+            default:
+                return $this->fromDefault();
+        }
+    }
+
+    private function fromRedis()
+    {
+        $store = $this->manager->store();
+
+        $results = $store->connection()->executeRaw([
+            'GET', $this->argument('query')
+        ]);
+
+        return $results;
+    }
+
+    private function fromDefault()
+    {
+        $results = $this->manager->store()->get(
+            $this->argument('query')
+        );
+
+        return $results;
     }
 
     /**

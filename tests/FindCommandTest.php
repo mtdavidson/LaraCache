@@ -20,6 +20,7 @@ class FindCommandTest extends PHPUnit_Framework_TestCase
 
         $storeMocker = Mockery::mock(Store::class);
 
+        $cacheManager->shouldReceive('getDefaultDriver')->once();
         $cacheManager->shouldReceive('store')->once()->andReturn($storeMocker);
         $storeMocker->shouldReceive('get')->once()->with('name');
 
