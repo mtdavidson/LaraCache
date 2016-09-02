@@ -123,11 +123,11 @@ class FindCommand extends Command
     {
         $store = $this->manager->store();
 
-        $results = $store->getMemcached()->get(
+        $result = $store->getMemcached()->get(
             $this->argument('query')
         );
 
-        if (is_null($results)) {
+        if (is_null($result)) {
             return $result;
         }
 
