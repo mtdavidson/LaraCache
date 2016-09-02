@@ -37,7 +37,7 @@ class ShowCommand extends Command
     /**
      * ShowCommand constructor.
      *
-     * @param  \Illuminate\Cache\CacheManager $manager
+     * @param  \Illuminate\Cache\CacheManager  $manager
      * @return void
      */
     public function __construct(CacheManager $manager)
